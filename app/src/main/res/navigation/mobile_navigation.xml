@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_engine_onprogress">
+
+    <fragment
+        android:id="@+id/nav_engine_onprogress"
+        android:name="gmf.rizky.lycomingm.ui.engineonprogress.EngineOnProgressFragment"
+        android:label="@string/menu_progress"
+        android:fontFamily="@font/helvetica_light"
+        tools:layout="@layout/fragment_engine_done" />
+
+    <fragment
+        android:id="@+id/nav_engine_done"
+        android:name="gmf.rizky.lycomingm.ui.enginedone.EngineDoneFragment"
+        android:label="@string/menu_done"
+        tools:layout="@layout/fragment_engine_onprogress" />
+
+    <fragment
+        android:id="@+id/nav_engine_done_detail"
+        android:name="gmf.rizky.lycomingm.ui.enginedonedetail.EngineDoneDetailFragment"
+        android:label="Engine Done Detail"
+        tools:layout="@layout/fragment_job_done_detail" />
+
+    <fragment
+        android:id="@+id/nav_engine_onprogress_detail"
+        android:name="gmf.rizky.lycomingm.ui.engineonprogressdetail.EngineOnProgressDetailFragment"
+        android:label="Engine On Progress Detail"
+        tools:layout="@layout/fragment_job_progress_detail"/>
+
+    <fragment
+        android:id="@+id/nav_note_onprogress_detail"
+        android:name="gmf.rizky.lycomingm.ui.noteonprogress.NoteOnProgressDetailFragment"
+        android:label="Update Note"
+        tools:layout="@layout/fragment_note_onprogress_detail"/>
+
+
+</navigation>

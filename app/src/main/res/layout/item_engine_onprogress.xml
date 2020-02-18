@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="jobprogress"
+            type="gmf.rizky.lycomingm.data.db.entities.Job_progress" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_margin="8dp"
+        android:id="@+id/cvEngineDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        card_view:cardCornerRadius="1dp"
+        card_view:elevation="40dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/textJobNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Job. No. :"
+                android:fontFamily="@font/helvetica_light"
+                android:layout_marginBottom="4dp"
+                android:textSize="20sp"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="#123456"/>
+
+            <TextView
+                android:id="@+id/textInputJobNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginBottom="4dp"
+                android:layout_toRightOf="@+id/textJobNo"
+                android:fontFamily="@font/helvetica_light"
+                android:text="@{jobprogress.job_number}"
+                android:textSize="20sp"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="#123456"
+                tools:text="18000"/>
+
+            <LinearLayout
+                android:layout_below="@+id/textInputJobNo"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <RelativeLayout
+                    android:layout_weight=".5"
+                    android:layout_marginRight="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textModel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/helvetica_light"
+                        android:textSize="14sp"
+                        android:text="Model      :"
+                        android:textAllCaps="false"
+                        android:textColor="#123456"/>
+
+                    <TextView
+                        android:id="@+id/textInputModel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/helvetica_light"
+                        android:layout_toRightOf="@+id/textModel"
+                        android:layout_marginLeft="2dp"
+                        android:text="@{jobprogress.engine_model_name}"
+                        android:textSize="14sp"
+                        android:textAllCaps="false"
+                        android:textColor="#123456"
+                        tools:text="Lycoming O-320"/>
+
+                    <TextView
+                        android:id="@+id/textSerialNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textModel"
+                        android:fontFamily="@font/helvetica_light"
+                        android:textSize="14sp"
+                        android:text="Serial No  :"
+                        android:textAllCaps="false"
+                        android:textColor="#123456"/>
+
+
+                    <TextView
+                        android:id="@+id/textInputSerialNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textModel"
+                        android:layout_toRightOf="@+id/textSerialNo"
+                        android:layout_marginLeft="2dp"
+                        android:text="@{jobprogress.job_engine_number}"
+                        android:fontFamily="@font/helvetica_light"
+                        android:textSize="14sp"
+                        android:textAllCaps="false"
+                        android:textColor="#123456"
+                        tools:text="RL-14572-39 A"/>
+
+                    <TextView
+                        android:id="@+id/textCustomer"
+                        android:layout_marginTop="2dp"
+                        android:layout_below="@+id/textSerialNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/helvetica_light"
+                        android:textSize="14sp"
+                        android:textAllCaps="false"
+                        android:textColor="#123456"
+                        android:text="Customer :"/>
+
+                    <TextView
+                        android:id="@+id/textInputCustomer"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="2dp"
+                        android:text="@{jobprogress.job_customer}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textInputSerialNo"
+                        android:layout_toRightOf="@+id/textCustomer"
+                        android:fontFamily="@font/helvetica_light"
+                        android:textSize="14sp"
+                        android:textAllCaps="false"
+                        android:textColor="#123456"
+                        tools:text="PT. MPS"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_weight=".5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="2dp">
+
+                    <TextView
+                        android:id="@+id/textDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date         :"
+                        android:fontFamily="@font/helvetica_light"
+                        android:textSize="14sp"
+                        android:textAllCaps="false"
+                        android:textColor="#123456"/>
+
+                    <TextView
+                        android:id="@+id/textInputDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_toRightOf="@+id/textDate"
+                        android:fontFamily="@font/helvetica_light"
+                        android:text="@{jobprogress.job_entry_date}"
+                        android:textSize="14sp"
+                        android:textAllCaps="false"
+                        android:textColor="#123456"
+                        tools:text="2002-Aug-02"/>
+
+                    <TextView
+                        android:id="@+id/textReference"
+                        android:layout_marginTop="2dp"
+                        android:layout_below="@+id/textDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/helvetica_light"
+                        android:textSize="13sp"
+                        android:textAllCaps="false"
+                        android:textColor="#123456"
+                        android:text="Reference  :"/>
+
+                    <TextView
+                        android:id="@+id/textInputReference"
+                        android:layout_below="@id/textInputDate"
+                        android:layout_toRightOf="@+id/textReference"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{jobprogress.job_reference}"
+                        android:fontFamily="@font/helvetica_light"
+                        android:textSize="13sp"
+                        android:textAllCaps="false"
+                        android:textColor="#123456"
+                        tools:text="OHM 60294-7-14"/>
+
+                    <TextView
+                        android:id="@+id/textReason"
+                        android:layout_marginTop="2dp"
+                        android:layout_below="@+id/textReference"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/helvetica_light"
+                        android:textSize="13sp"
+                        android:textAllCaps="false"
+                        android:textColor="#123456"
+                        android:text="Reason      :"/>
+
+                    <TextView
+                        android:id="@+id/textInputReason"
+                        android:layout_below="@id/textInputReference"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_toRightOf="@id/textReason"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{jobprogress.job_order_name}"
+                        android:fontFamily="@font/helvetica_light"
+                        android:textSize="13sp"
+                        android:textAllCaps="false"
+                        android:textColor="#123456"
+                        tools:text="Overhaul"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
