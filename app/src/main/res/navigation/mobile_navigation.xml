@@ -32,9 +32,9 @@
 
     <fragment
         android:id="@+id/nav_note_onprogress_detail"
-        android:name="gmf.rizky.lycomingm.ui.noteonprogress.NoteOnProgressDetailFragment"
+        android:name="gmf.rizky.lycomingm.ui.note.NoteOnProgressDetailFragment"
         android:label="Update Note"
-        tools:layout="@layout/fragment_note_onprogress_detail"/>
+        tools:layout="@layout/fragment_note_detail"/>
 
 
 </navigation>

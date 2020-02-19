@@ -45,7 +45,8 @@ interface ApiService {
 
     companion object{
         operator fun invoke(
-            networkConnectionInterceptor: NetworkConnectionInterceptor
+            networkConnectionInterceptor: NetworkConnectionInterceptor,
+            networkAuthConnectionInterceptor: NetworkAuthConnectionInterceptor
         ) : ApiService{
             val interceptor = HttpLoggingInterceptor()
             interceptor.level = HttpLoggingInterceptor.Level.HEADERS
@@ -56,6 +57,9 @@ interface ApiService {
                 .connectTimeout(50, TimeUnit.SECONDS)
                 .readTimeout(50, TimeUnit.SECONDS)
                 .addInterceptor(networkConnectionInterceptor)
+                .connectTimeout(50, TimeUnit.SECONDS)
+                .readTimeout(50, TimeUnit.SECONDS)
+                .addInterceptor(networkAuthConnectionInterceptor)
                 .build()
 
             return Retrofit.Builder()

@@ -1,4 +1,4 @@
-package gmf.rizky.lycomingm.ui.noteonprogress
+package gmf.rizky.lycomingm.ui.note
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

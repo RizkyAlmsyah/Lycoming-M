@@ -6,4 +6,10 @@
     <font
         android:fontStyle="italic"
         android:font="@font/helvetica_light" />
+
+    <font android:fontStyle="normal"
+        android:font="@font/helvetica_bold" />
+
+    <font android:fontStyle="normal"
+        android:font="@font/helvetica_med"/>
 </font-family>

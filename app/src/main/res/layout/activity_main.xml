@@ -32,10 +32,52 @@
             app:headerLayout="@layout/navigation"
             app:menu="@menu/activity_main_drawer">
 
+            <LinearLayout
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="bottom"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/ivExit"
+                        android:layout_marginLeft="12dp"
+                        android:layout_width="27dp"
+                        android:layout_height="27dp"
+                        android:background="@drawable/ic_exit_to_app_black_24dp"/>
+8
+                    <TextView
+                        android:id="@+id/txtLogout"
+                        android:layout_marginLeft="14dp"
+                        android:layout_toRightOf="@+id/ivExit"
+                        android:layout_marginTop="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/helvetica_med"
+                        android:textAllCaps="false"
+                        android:textColor="#000000"
+                        android:text="Log Out"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
             <include layout="@layout/nav_header_main"
                 bind:thisManagement="@{thisManagement}"/>
 
         </com.google.android.material.navigation.NavigationView>
+
+
 
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

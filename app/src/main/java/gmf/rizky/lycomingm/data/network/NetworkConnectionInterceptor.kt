@@ -1,16 +1,20 @@
 package gmf.rizky.lycomingm.data.network
 
 import android.content.Context
+import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import androidx.core.content.ContextCompat.startActivity
+import gmf.rizky.lycomingm.data.db.AppDatabase
 import gmf.rizky.lycomingm.data.preferenfces.PreferenceProvider
+import gmf.rizky.lycomingm.ui.login.LoginActivity
 import gmf.rizky.lycomingm.util.NoInternetException
 import okhttp3.Interceptor
+import okhttp3.Request
 import okhttp3.Response
 
 class NetworkConnectionInterceptor(
-    context: Context,
-    private val prefs: PreferenceProvider
+    context: Context
 ) : Interceptor {
 
     private val applicationContext = context.applicationContext

@@ -10,7 +10,7 @@
             type="gmf.rizky.lycomingm.data.db.entities.Job" />
         <variable
             name="viewmodel"
-            type="gmf.rizky.lycomingm.ui.noteonprogress.NoteViewModel"/>
+            type="gmf.rizky.lycomingm.ui.note.NoteViewModel"/>
     </data>
 
     <RelativeLayout

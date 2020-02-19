@@ -3,6 +3,7 @@ package gmf.rizky.lycomingm
 import android.app.Application
 import gmf.rizky.lycomingm.data.db.AppDatabase
 import gmf.rizky.lycomingm.data.network.ApiService
+import gmf.rizky.lycomingm.data.network.NetworkAuthConnectionInterceptor
 import gmf.rizky.lycomingm.data.network.NetworkConnectionInterceptor
 import gmf.rizky.lycomingm.data.preferenfces.PreferenceProvider
 import gmf.rizky.lycomingm.data.repositories.*
@@ -11,8 +12,8 @@ import gmf.rizky.lycomingm.ui.enginedonedetail.EngineDoneDetailViewModelFactory
 import gmf.rizky.lycomingm.ui.engineonprogress.EngineOnProgressViewModelFactory
 import gmf.rizky.lycomingm.ui.engineonprogressdetail.EngineOnProgressDetailViewModelFactory
 import gmf.rizky.lycomingm.ui.login.LoginViewModelFactory
-import gmf.rizky.lycomingm.ui.noteonprogress.JobViewModelFactory
-import gmf.rizky.lycomingm.ui.noteonprogress.NoteViewModelFactory
+import gmf.rizky.lycomingm.ui.note.JobViewModelFactory
+import gmf.rizky.lycomingm.ui.note.NoteViewModelFactory
 import gmf.rizky.lycomingm.ui.profile.ProfileViewModelFactory
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
@@ -28,8 +29,9 @@ class BaseApplication : Application(), KodeinAware {
         import(androidXModule(this@BaseApplication))
 
         //netowork
-        bind() from singleton { NetworkConnectionInterceptor(instance(), instance()) }
-        bind() from singleton { ApiService(instance()) }
+        bind() from singleton { NetworkConnectionInterceptor(instance()) }
+        bind() from singleton { NetworkAuthConnectionInterceptor(instance(), instance()) }
+        bind() from singleton { ApiService(instance(), instance()) }
         //storage
         bind() from singleton { AppDatabase(instance()) }
         bind() from singleton { PreferenceProvider(instance()) }

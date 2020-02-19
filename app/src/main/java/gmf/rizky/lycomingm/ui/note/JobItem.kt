@@ -1,4 +1,4 @@
-package gmf.rizky.lycomingm.ui.noteonprogress
+package gmf.rizky.lycomingm.ui.note
 
 import com.xwray.groupie.databinding.BindableItem
 import gmf.rizky.lycomingm.R

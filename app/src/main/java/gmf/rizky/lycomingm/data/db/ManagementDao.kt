@@ -17,4 +17,6 @@ interface ManagementDao{
     @Query("SELECT * FROM management WHERE uid = $CURRENT_MANAGEMENT_ID")
     fun getmanagement() : LiveData<Management>
 
+    @Query("DELETE FROM management")
+    fun deletemanagement()
 }

@@ -1,4 +1,4 @@
-package gmf.rizky.lycomingm.ui.noteonprogress
+package gmf.rizky.lycomingm.ui.note
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,9 +15,9 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import gmf.rizky.lycomingm.R
 import gmf.rizky.lycomingm.data.db.entities.Job
-import gmf.rizky.lycomingm.databinding.FragmentNoteOnprogressDetailBinding
+import gmf.rizky.lycomingm.databinding.FragmentNoteDetailBinding
 import gmf.rizky.lycomingm.util.Coroutines
-import kotlinx.android.synthetic.main.fragment_note_onprogress_detail.*
+import kotlinx.android.synthetic.main.fragment_note_detail.*
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
 import org.kodein.di.generic.instance
@@ -47,13 +47,17 @@ class NoteOnProgressDetailFragment : Fragment(), KodeinAware, NoteListener {
         savedInstanceState: Bundle?
     ): View? {
 
-        val bindingNote: FragmentNoteOnprogressDetailBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_note_onprogress_detail, container, false)
+        val bindingNote: FragmentNoteDetailBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_note_detail, container, false)
 
         val bundle: Bundle? = this.getArguments()
 
         val job_id: Int? = bundle?.getInt(JOB_ID)
         val progress_job_id: Int? = bundle?.getInt(PROGRESS_JOB_ID)
-        val progress_job_note: String? = bundle?.getString(PROGRESS_JOB_NOTE)
+        var progress_job_note: String? = bundle?.getString(PROGRESS_JOB_NOTE)
+
+        if(progress_job_note.isNullOrEmpty()){
+            progress_job_note = ""
+        }
 
         factoryJob.jobId = job_id.toString()
         factoryNote.progress_job_id = progress_job_id.toString()

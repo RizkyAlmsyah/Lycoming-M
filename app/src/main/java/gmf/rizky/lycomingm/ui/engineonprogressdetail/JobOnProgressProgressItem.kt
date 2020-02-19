@@ -10,7 +10,7 @@ import com.xwray.groupie.databinding.BindableItem
 import gmf.rizky.lycomingm.R
 import gmf.rizky.lycomingm.data.db.entities.Job_progress_list
 import gmf.rizky.lycomingm.databinding.ItemJobOnprogressProgressDetailBinding
-import gmf.rizky.lycomingm.ui.noteonprogress.NoteOnProgressDetailFragment
+import gmf.rizky.lycomingm.ui.note.NoteOnProgressDetailFragment
 
 class JobOnProgressProgressItem (
     val jobOnProgressProgressList: Job_progress_list
