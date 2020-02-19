@@ -10,7 +10,7 @@ import com.xwray.groupie.databinding.BindableItem
 import gmf.rizky.lycomingm.R
 import gmf.rizky.lycomingm.data.db.entities.Job_progress_list
 import gmf.rizky.lycomingm.databinding.ItemJobDoneProgressDetailBinding
-import gmf.rizky.lycomingm.ui.note.NoteOnProgressDetailFragment
+import gmf.rizky.lycomingm.ui.note.NoteDetailFragment
 
 class JobDoneProgressItem (
     val jobDoneProgressList: Job_progress_list
@@ -43,11 +43,12 @@ class JobDoneProgressItem (
         viewBinding.btnUpdateNote.setOnClickListener { view ->
             val bundle = Bundle()
 
-            val fragment = NoteOnProgressDetailFragment()
+            val fragment = NoteDetailFragment()
 
-            bundle.putInt(NoteOnProgressDetailFragment.JOB_ID, jobDoneProgressList.job_id)
-            bundle.putInt(NoteOnProgressDetailFragment.PROGRESS_JOB_ID, jobDoneProgressList.progress_job_id)
-            bundle.putString(NoteOnProgressDetailFragment.PROGRESS_JOB_NOTE, jobDoneProgressList.progress_job_note)
+            bundle.putInt(NoteDetailFragment.JOB_ID, jobDoneProgressList.job_id)
+            bundle.putInt(NoteDetailFragment.PROGRESS_JOB_ID, jobDoneProgressList.progress_job_id)
+            bundle.putString(NoteDetailFragment.PROGRESS_JOB_NOTE, jobDoneProgressList.progress_job_note)
+            bundle.putString(NoteDetailFragment.JOB_SHEET_NAME, jobDoneProgressList.job_sheet_name)
 
             fragment.arguments = bundle
             Navigation.findNavController(view).navigate(R.id.nav_note_onprogress_detail, bundle)

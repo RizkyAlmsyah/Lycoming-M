@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -22,7 +23,7 @@ import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
 import org.kodein.di.generic.instance
 
-class NoteOnProgressDetailFragment : Fragment(), KodeinAware, NoteListener {
+class NoteDetailFragment : Fragment(), KodeinAware, NoteListener {
 
     override val kodein by kodein()
 
@@ -39,6 +40,7 @@ class NoteOnProgressDetailFragment : Fragment(), KodeinAware, NoteListener {
         val PROGRESS_JOB_NOTE = "PROGRESS_JOB_NOTE"
         val JOB_ID = "JOB_ID"
         val PROGRESS_JOB_ID = "PROGRESS_JOB_ID"
+        val JOB_SHEET_NAME = "JOB_SHEET_NAME"
     }
 
     override fun onCreateView(
@@ -54,6 +56,7 @@ class NoteOnProgressDetailFragment : Fragment(), KodeinAware, NoteListener {
         val job_id: Int? = bundle?.getInt(JOB_ID)
         val progress_job_id: Int? = bundle?.getInt(PROGRESS_JOB_ID)
         var progress_job_note: String? = bundle?.getString(PROGRESS_JOB_NOTE)
+        val job_sheet_name: String? = bundle?.getString(JOB_SHEET_NAME)
 
         if(progress_job_note.isNullOrEmpty()){
             progress_job_note = ""
@@ -62,6 +65,9 @@ class NoteOnProgressDetailFragment : Fragment(), KodeinAware, NoteListener {
         factoryJob.jobId = job_id.toString()
         factoryNote.progress_job_id = progress_job_id.toString()
         factoryNote.progress_job_note = progress_job_note.toString()
+        factoryNote.job_sheet_name = job_sheet_name.toString()
+
+
 
         viewModelJob = ViewModelProviders.of(this, factoryJob).get(JobViewModel::class.java)
         viewModelNote = ViewModelProviders.of(this, factoryNote).get(NoteViewModel::class.java)

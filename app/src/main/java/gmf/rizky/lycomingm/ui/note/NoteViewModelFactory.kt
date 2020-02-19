@@ -13,7 +13,9 @@ class NoteViewModelFactory (
 
     lateinit var progress_job_note: String
 
+    lateinit var job_sheet_name: String
+
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return NoteViewModel(noteRepository, progress_job_id, progress_job_note) as T
+        return NoteViewModel(noteRepository, progress_job_id, progress_job_note, job_sheet_name) as T
     }
 }

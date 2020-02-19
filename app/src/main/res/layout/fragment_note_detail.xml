@@ -46,11 +46,12 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/txtInputJobSheetName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/helvetica_light"
+                    android:text="@{viewmodel.jobSheetName}"
                     android:layout_marginBottom="4dp"
-                    android:text="Visual Inspection Accessory Housing"
                     android:textSize="20sp"
                     android:textAllCaps="false"
                     android:textStyle="bold"

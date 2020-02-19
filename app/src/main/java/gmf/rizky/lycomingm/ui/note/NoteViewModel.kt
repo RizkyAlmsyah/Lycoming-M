@@ -10,19 +10,17 @@ import gmf.rizky.lycomingm.util.NoInternetException
 class NoteViewModel (
     private val noteRepository: NoteRepository,
     private val progress_job_id: String,
-    private val progress_job_note: String
+    private val progress_job_note: String,
+    private val job_sheet_name: String
 ): ViewModel() {
     var note: String?= progress_job_note
+
+    val jobSheetName: String? = job_sheet_name
 
     var noteListener: NoteListener? = null
 
     fun onSubmitButtonClick(view: View){
         noteListener?.onStarted()
-        if(note.isNullOrEmpty()){
-            noteListener?.onFailure("Note Empty please if cancel go back")
-            return
-        }
-
         Coroutines.main {
             try {
                 val noteResponse = noteRepository.notePost(progress_job_id.toInt(), note!!)
