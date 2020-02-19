@@ -12,8 +12,8 @@ import gmf.rizky.lycomingm.data.db.entities.*
 )
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun getJobDoneDao() : JobDoneDao
     abstract fun getManagementDao() : ManagementDao
+    abstract fun getJobDoneDao() : JobDoneDao
     abstract fun getJobProgressDao() : JobProgressDao
     abstract fun getJobProgressListDao() : JobProgressListDao
     abstract fun getJobDao() : JobDao

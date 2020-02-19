@@ -1,6 +1,7 @@
 package gmf.rizky.lycomingm.data.db.entities
 
 import androidx.room.*
+
 @Entity
 data class Job_done(
     @PrimaryKey(autoGenerate = false)

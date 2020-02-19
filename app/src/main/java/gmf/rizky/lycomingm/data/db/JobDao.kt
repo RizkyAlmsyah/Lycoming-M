@@ -7,7 +7,6 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import gmf.rizky.lycomingm.data.db.entities.Job
 
-
 @Dao
 interface JobDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
