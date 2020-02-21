@@ -72,7 +72,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/helvetica_light"
-                            android:textSize="14sp"
+                            android:textSize="13sp"
                             android:text="Model      :"
                             android:textAllCaps="false"
                             android:textColor="#123456"/>
@@ -84,7 +84,7 @@
                             android:fontFamily="@font/helvetica_light"
                             android:layout_toRightOf="@+id/textModel"
                             android:layout_marginLeft="2dp"
-                            android:textSize="14sp"
+                            android:textSize="13sp"
                             android:textAllCaps="false"
                             android:textColor="#123456"
                             tools:text="Lycoming O-320"/>
@@ -95,7 +95,8 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/textInputModel"
                             android:fontFamily="@font/helvetica_light"
-                            android:textSize="14sp"
+                            android:layout_marginTop="2dp"
+                            android:textSize="13sp"
                             android:text="Serial No  :"
                             android:textAllCaps="false"
                             android:textColor="#123456"/>
@@ -105,11 +106,12 @@
                             android:id="@+id/textInputSerialNo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
                             android:layout_below="@+id/textInputModel"
                             android:layout_toRightOf="@+id/textSerialNo"
                             android:layout_marginLeft="2dp"
                             android:fontFamily="@font/helvetica_light"
-                            android:textSize="14sp"
+                            android:textSize="13sp"
                             android:textAllCaps="false"
                             android:textColor="#123456"
                             tools:text="RL-14572-39 A"/>
@@ -121,7 +123,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/helvetica_light"
-                            android:textSize="14sp"
+                            android:textSize="13sp"
                             android:textAllCaps="false"
                             android:textColor="#123456"
                             android:text="Customer :"/>
@@ -135,7 +137,7 @@
                             android:layout_below="@+id/textInputSerialNo"
                             android:layout_toRightOf="@+id/textCustomer"
                             android:fontFamily="@font/helvetica_light"
-                            android:textSize="14sp"
+                            android:textSize="13sp"
                             android:textAllCaps="false"
                             android:textColor="#123456"
                             tools:text="PT. MPS"/>
@@ -154,7 +156,7 @@
                             android:layout_height="wrap_content"
                             android:text="Date         :"
                             android:fontFamily="@font/helvetica_light"
-                            android:textSize="14sp"
+                            android:textSize="13sp"
                             android:textAllCaps="false"
                             android:textColor="#123456"/>
 
@@ -165,7 +167,7 @@
                             android:layout_marginLeft="2dp"
                             android:layout_toRightOf="@+id/textDate"
                             android:fontFamily="@font/helvetica_light"
-                            android:textSize="14sp"
+                            android:textSize="13sp"
                             android:textAllCaps="false"
                             android:textColor="#123456"
                             tools:text="2002-Aug-02"/>
