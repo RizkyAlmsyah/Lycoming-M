@@ -1,4 +1,4 @@
-package gmf.rizky.lycomingm.ui.enginedonedetail
+package gmf.rizky.lycomingm.ui.enginedetail
 
 import android.graphics.Color
 import android.os.Bundle
@@ -9,15 +9,15 @@ import androidx.transition.TransitionManager
 import com.xwray.groupie.databinding.BindableItem
 import gmf.rizky.lycomingm.R
 import gmf.rizky.lycomingm.data.db.entities.Job_progress_list
-import gmf.rizky.lycomingm.databinding.ItemJobDoneProgressDetailBinding
+import gmf.rizky.lycomingm.databinding.ItemJobProgressDetailBinding
 import gmf.rizky.lycomingm.ui.note.NoteDetailFragment
 
-class JobDoneProgressItem (
+class JobProgressItem (
     val jobDoneProgressList: Job_progress_list
-) : BindableItem<ItemJobDoneProgressDetailBinding>() {
-    override fun getLayout() = R.layout.item_job_done_progress_detail
+) : BindableItem<ItemJobProgressDetailBinding>() {
+    override fun getLayout() = R.layout.item_job_progress_detail
 
-    override fun bind(viewBinding: ItemJobDoneProgressDetailBinding, position: Int){
+    override fun bind(viewBinding: ItemJobProgressDetailBinding, position: Int){
         viewBinding.jobprogresslist = jobDoneProgressList
         if(viewBinding.getJobprogresslist()?.progress_status_name == "Done"){
             viewBinding.progressInputStatus.setTextColor(Color.rgb(20, 171, 0))
